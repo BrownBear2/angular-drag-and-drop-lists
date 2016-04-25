@@ -400,6 +400,8 @@ angular.module('dndLists', [])
        */
       element.on('dragleave', function(event) {
         event = event.originalEvent || event;
+        
+        if (event.target !== listNode) return;
 
         element.removeClass("dndDragover");
         $timeout(function() {
